@@ -2,7 +2,7 @@
 
 My progress on the issue so far:
 
-1) When running Node-RED with node-red-contrib-pi-plates a full installation of raspbian, a black screen appears.
+1) When running Node-RED with node-red-contrib-pi-plates on a full installation of raspbian, a black screen appears.
 2) I wanted to see if it was related to pygame (it's a graphical issue) so I adjusted plate_io.py to remove the TINKERplate dependency (the only plate that uses pygame). The black screen didn't appear. However, the structure of TINKERplate was also different. To verify that wasn't the issue, I removed the "import METER.py" line from piplates.TINKERplate, keeping the TINKERplate functionality but removing pygame. Once agian, the black screen doesn't appear. If I then add "import pygame" and "pygame.init()" to the plate_io.py script that Node-RED runs, the issue returns.
 3) pygame works just fine normally.
 4) It's not an error. After the black screen shows up, Node-RED starts just fine and everything works. It can be accessed from another computer. Additionally, even though the screen is black, if I move the cursor somewhere on the screen where there was a text box/terminal, it changes from a pointer to the insert text mouse.
